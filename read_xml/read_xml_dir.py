@@ -4,9 +4,9 @@ import xml.etree.ElementTree as ET
 import os, cv2
 from tqdm import tqdm
 
-annota_dir = 'data/annotation'
-image_dir = 'data/image'
-target_dir1='data/outputs'
+annota_dir = 'C:\\Users\\zhaoshizhong\\Desktop\\test\\Annotations'
+image_dir = 'C:\\Users\\zhaoshizhong\\Desktop\\test\\images'
+target_dir1 = 'C:\\Users\\zhaoshizhong\\Desktop\\test\\outputs'
 
 def divide_img(oriname):
     img_file = os.path.join(image_dir, oriname + '.jpg')
@@ -25,7 +25,7 @@ def divide_img(oriname):
         color = (221, 0, 27)
         cv2.rectangle(im, (Xmin, Ymin), (Xmax, Ymax), color, 2)
         font = cv2.CALIB_SAME_FOCAL_LENGTH   # 字体
-        cv2.putText(im, object_name, (Xmin, Ymin+25), font, 1.2, (6, 230, 230), 2)
+        cv2.putText(im, object_name, (Xmin, Ymin+25), font, 0.6, (6, 230, 230), 2)
         cv2.imshow('01', im)
 
     img_name = oriname + '.jpg'
